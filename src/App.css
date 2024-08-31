@@ -1,0 +1,215 @@
+/* App.css */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* 深色背景 */
+  color: #ffffff; /* 白色文本 */
+}
+
+.app-container {
+  display: flex;
+  height: 100%;
+  background-color: #1e1e1e; /* 容器背景颜色 */
+  overflow: hidden;
+}
+
+.table-container, .log-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.table-container {
+  flex-grow: 3;
+  overflow: hidden;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.table-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden; /* 表格容器内滚动 */
+}
+
+.handsontable-root {
+  width: 100%;
+  height: 100%;
+  background-color: #2d2d2d; /* 表格背景颜色 */
+  border: 1px solid #3c3c3c; /* 边框颜色 */
+  overflow: auto; /* 允许表格滚动 */
+}
+
+.log-container {
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: #1e1e1e; /* 日志背景颜色 */
+  border-left: 1px solid #3c3c3c; /* 边框颜色 */
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 10px 0;
+  color: #ffffff; /* 标题颜色 */
+}
+
+pre {
+  flex: 1;
+  background: #2d2d2d; /* 日志区域背景颜色 */
+  padding: 10px;
+  overflow: auto;
+  margin: 0;
+  white-space: pre-wrap;
+  border-radius: 4px;
+  border: 1px solid #3c3c3c;
+}
+
+.sheet-selector {
+  display: flex;
+  align-items: center;
+}
+
+.sheet-selector label {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.sheet-selector select {
+  padding: 5px;
+  font-size: 1rem;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #3c3c3c;
+  border-radius: 4px;
+  margin-right: 20px; /* 添加额外的空间 */
+}
+
+.handsontable-root .ht_master .wtHolder {
+  overflow: auto !important; /* 允许表格内部滚动 */
+  background-color: #2d2d2d; /* 表格背景颜色 */
+}
+
+.handsontable-root .ht_master .htCore th, 
+.handsontable-root .ht_master .htCore td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px solid #3c3c3c; /* 单元格边框颜色 */
+  color: #ffffff !important; /* 单元格文本颜色 */
+  background-color: #2d2d2d; /* 单元格背景颜色 */
+}
+
+.handsontable-root .ht_master .htCore tr:hover {
+  background-color: #444444 !important; /* 设置高亮单元格背景颜色 */
+}
+
+.handsontable-root .ht_master .currentRow, 
+.handsontable-root .ht_master .currentCol {
+  background-color: #333333 !important; /* 设置选中单元格背景颜色 */
+}
+
+.handsontable-root .ht_master .htDimmed {
+  color: #b0b0b0 !important; /* 设置禁用单元格文本颜色 */
+}
+
+.handsontable-root .ht_master .htCore ::selection {
+  background: #0078d4; /* 选中文本背景颜色 */
+  color: #ffffff; /* 选中文本颜色 */
+}
+
+.handsontable-root .ht_master .htCore ::-moz-selection {
+  background: #0078d4; /* 选中文本背景颜色 */
+  color: #ffffff; /* 选中文本颜色 */
+}
+
+/* 自定义样式 */
+.handsontable .dark-gray {
+  background-color: #444444 !important; /* 深灰色 */
+  color: #ffffff !important; /* 保持深灰色背景下的白色文本 */
+}
+
+.handsontable .light-gray {
+  background-color: #555555 !important; /* 浅灰色 */
+  color: #ffffff !important; /* 保持浅灰色背景下的白色文本 */
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.slider-container label {
+  margin-right: 10px;
+}
+
+.slider-container input[type="range"] {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.slider-container input[type="number"] {
+  width: 60px;
+  margin-left: 10px;
+}
+
+/* 新增的选项卡样式 */
+.tab-selector {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+}
+
+.tab-selector .tab-button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  background-color: #2d2d2d;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.tab-selector .tab-button:hover {
+  background-color: #3c3c3c;
+}
+
+.tab-selector .tab-button.active {
+  background-color: #555555;
+  font-weight: bold;
+}
+
+/* 新增的下载按钮样式 */
+.download-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.download-button-container .download-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #006400; /* 深绿色 */
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.download-button-container .download-button:hover {
+  background-color: #008000; /* 稍微亮一点的绿色 */
+}
+
+.sheet-selector, .slider-container {
+  flex: 1;
+}
